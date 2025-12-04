@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -33,8 +33,8 @@
                     <p>Por isso, reunimos aqui conteúdos, análises, materiais didáticos e debates fundamentados em autores e pesquisadoras/es reconhecidos no campo, buscando contribuir para uma formação crítica e emancipadora.</p>
                 </div>
                 <div class="highlight-box">
-                    <h3>Nosso Objetivo</h3>
-                    <p>Que este site seja um espaço <strong>acessível, colaborativo e inspirador</strong>, onde educadores, estudantes e interessados encontrem subsídios para repensar práticas, fortalecer a cidadania e refletir sobre os desafios socioambientais contemporâneos.</p>
+                    <h3>Nossos Objetivos</h3>
+                    <p>Nossa proposta é promover um diálogo que <strong>não se limite a transmitir conteúdos prontos</strong>, mas que construa conhecimento de forma <strong>coletiva e situada</strong>. Por isso, reunimos aqui narrativas reais de lutas <strong>socioambientais, análises fundamentadas em pesquisadores e pesquisadoras reconhecidos no campo, materiais didáticos e debates que articulam teoria e prática</strong>. Valorizamos tanto o conhecimento acadêmico quanto os saberes de comunidades tradicionais, movimentos sociais, professores da rede pública e estudantes, reconhecendo que a transformação socioambiental exige múltiplos olhares e múltiplas vozes.
                 </div>
             </div>
         </div>
@@ -43,26 +43,39 @@
     <section id="menu-conteudo" class="section-padding bg-light">
         <div class="container">
             <h2 class="section-title center">Explore os Conteúdos</h2>
+            <p class="center section-subtitle">Navegue pelos principais tópicos da plataforma.</p>
+            
             <div class="grid-icones">
                 <a href="#atualidades" class="card">
-                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/2928/2928883.png" alt="Atualidades"></div>
+                    <div class="icon-circle">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2928/2928883.png" alt="Fatos">
+                    </div>
                     <h3>Fatos da Atualidade</h3>
-                    <p>Entendendo a Lei Ambiental através de fatos da atualidade.</p>
+                    <p>Da Lei à Realidade: Onde Está a Educação Ambiental?</p>
                 </a>
+                
                 <a href="#especialistas" class="card">
-                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/3074/3074767.png" alt="Especialistas"></div>
+                    <div class="icon-circle">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3074/3074767.png" alt="Especialistas">
+                    </div>
                     <h3>Especialistas Falam</h3>
-                    <p>Educação Ambiental Crítica.</p>
+                    <p>Vozes da Educação Ambiental Crítica.</p>
                 </a>
+                
                 <a href="#lei" class="card">
-                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Lei"></div>
-                    <h3>Conhecendo a Lei</h3>
-                    <p>Lei nº 9.795/99.</p>
+                    <div class="icon-circle">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Lei">
+                    </div>
+                    <h3>A Lei na Íntegra</h3>
+                    <p>Instrumento de Luta ou Letra Morta?</p>
                 </a>
+                
                 <a href="#duvidas" class="card">
-                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/4212/4212818.png" alt="Dúvidas"></div>
-                    <h3>Esclarecimentos</h3>
-                    <p>Espaço de Esclarecimentos.</p>
+                    <div class="icon-circle">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5726/5726678.png" alt="Dúvidas">
+                    </div>
+                    <h3>Construindo Entendimentos</h3>
+                    <p>Dúvidas e Diálogos</p>
                 </a>
             </div>
         </div>
@@ -79,10 +92,6 @@
 
                 <div class="bloco-carrossel">
                     <div class="mini-carousel" id="carousel-seca">
-                        <div class="slide fade">
-                            <img src="images/boletim_especial.jpg" alt="Solo rachado" class="img-slide">
-                            <div class="caption">Boletim Especial</div>
-                        </div>
                         <div class="slide fade">
                             <img src="images/solo_rachado.jpeg" alt="Solo rachado" class="img-slide">
                             <div class="caption">Solo rachado pela estiagem</div>
@@ -105,13 +114,13 @@
                         <strong>QUESTÃO:</strong> Analisando imagens de estiagem prolongada no Nordeste — que afeta rios, lavouras e comunidades inteiras — e considerando o Art. 4º, I e V da Lei nº 9.795/99, que orienta a educação ambiental para a compreensão integrada do meio ambiente e para a participação crítica da sociedade, qual prática educativa está mais alinhada à Educação Ambiental Crítica?
                     </p>
                     <button class="btn-quiz" onclick="verificarResposta(this, false)">
-                        A) ( ) Explicar que a seca é exclusivamente um fenômeno natural, desconsiderando fatores sociais, políticos e econômicos que agravam seus impactos.
+                        A) Explicar que a seca é exclusivamente um fenômeno natural, desconsiderando fatores sociais, políticos e econômicos que agravam seus impactos.
                     </button>
                     <button class="btn-quiz" onclick="verificarResposta(this, false)">
-                        B) ( ) Incentivar apenas que cada família encontre soluções individuais para obter água, sem analisar a responsabilidade do Estado, a falta de políticas públicas e a desigualdade de acesso.
+                        B) Incentivar apenas que cada família encontre soluções individuais para obter água, sem analisar a responsabilidade do Estado, a falta de políticas públicas e a desigualdade de acesso.
                     </button>
                     <button class="btn-quiz" onclick="verificarResposta(this, true)">
-                        C) ( ) Promover discussões sobre políticas públicas de convivência com o semiárido, gestão democrática da água, programas de cisternas, agricultura sustentável, justiça socioambiental, vulnerabilidade das populações e alternativas de desenvolvimento regional que respeitem o território.
+                        C) Promover discussões sobre políticas públicas de convivência com o semiárido, gestão democrática da água, programas de cisternas, agricultura sustentável, justiça socioambiental, vulnerabilidade das populações e alternativas de desenvolvimento regional que respeitem o território.
                     </button>
                 </div>
 
@@ -157,13 +166,13 @@
                         <strong>QUESTÃO:</strong> Com base nas imagens de devastação da Caatinga (desmatamento, áreas degradadas, supressão de vegetação nativa) no Nordeste — e considerando os objetivos da Lei 9.795/99 (Art. 4º, I: compreensão integrada do meio ambiente e Art. 3º, V + Art. 4º, V–VI: promoção da participação cidadã e consciência crítica) — qual ação educativa mais coerente com a Educação Ambiental Crítica?
                     </p>
                     <button class="btn-quiz" onclick="verificarResposta(this, false)">
-                        A) ( ) Realizar campanhas de conscientização que ensinem apenas a importância da “preservação da natureza”, sem questionar ou problematizar os projetos de “desenvolvimento” que provocam o desmatamento no bioma.
+                        A) Realizar campanhas de conscientização que ensinem apenas a importância da “preservação da natureza”, sem questionar ou problematizar os projetos de “desenvolvimento” que provocam o desmatamento no bioma.
                     </button>
                     <button class="btn-quiz" onclick="verificarResposta(this, false)">
-                        B) ( ) Estimular que comunidades e escolas adotem práticas de “reflorestamento simbólico” com plantas ornamentais, sem abordar a causa da perda da Caatinga nem exigir políticas públicas de proteção.
+                        B) Estimular que comunidades e escolas adotem práticas de “reflorestamento simbólico” com plantas ornamentais, sem abordar a causa da perda da Caatinga nem exigir políticas públicas de proteção.
                     </button>
                     <button class="btn-quiz" onclick="verificarResposta(this, true)">
-                        C) ( ) Promover educação ambiental que denuncie a supressão da Caatinga, analise criticamente as políticas públicas e modelos de “desenvolvimento” (energia, agronegócio, expansão urbana), e incentive mobilização social para reivindicar proteção legal do bioma, uso sustentável do território e participação comunitária nas decisões ambientais.
+                        C) Promover educação ambiental que denuncie a supressão da Caatinga, analise criticamente as políticas públicas e modelos de “desenvolvimento” (energia, agronegócio, expansão urbana), e incentive mobilização social para reivindicar proteção legal do bioma, uso sustentável do território e participação comunitária nas decisões ambientais.
                     </button>
                 </div>
 
@@ -225,50 +234,96 @@
         </div>
     </section>
 
-    <section id="lei" class="section-padding bg-primary text-white">
-        <div class="container center">
-            <h2 class="section-title white-text">Conhecendo a Lei nº 9.795/99</h2>
-            <div class="lei-content">
-                <img src="images/educacao_ambiental.jpg" alt="Capa Lei" class="book-cover">
-                <div class="lei-info">
-                    <p>Coleção Ambiental Educação Ambiental. Acesso direto ao texto da lei no Planalto.</p>
-                    <a href="https://www.planalto.gov.br/ccivil_03/leis/l9795.htm" target="_blank" class="btn-cta">Ler Lei &rarr;</a>
+    <section id="lei" class="section-padding lei-section">
+        <div class="container">
+            <div class="lei-wrapper">
+                
+                <div class="lei-visual">
+                    <img src="images/educacao_ambiental.jpg" alt="Livro da Lei" class="book-3d">
+                    <div class="book-shadow"></div>
                 </div>
+
+                <div class="lei-content-text">
+                    <h2>Conhecendo a Lei nº 9.795/99</h2>
+                    <p>Esta lei institui a <strong>Política Nacional de Educação Ambiental</strong> e é o documento fundamental para educadores e cidadãos.</p>
+                    <p>Ela define que a educação ambiental é um componente essencial e permanente da educação nacional, devendo estar presente, de forma articulada, em todos os níveis e modalidades do processo educativo.</p>
+                    
+                    <a href="https://www.planalto.gov.br/ccivil_03/leis/l9795.htm" target="_blank" class="btn-gold">
+                        Ler Texto na Íntegra &rarr;
+                    </a>
+                </div>
+
             </div>
-            <div class="center-btn"><a href="#menu-conteudo" class="btn-back" style="color: white; border-color: white;">Voltar ao Menu &uarr;</a></div>
         </div>
     </section>
 
     <section id="duvidas" class="section-padding bg-white">
-        <div class="container">
+        <div class="container container-narrow">
             <h2 class="section-title center">Espaço de Esclarecimentos</h2>
+            <p class="center section-subtitle">Principais dúvidas sobre a legislação e a prática ambiental.</p>
+            
             <div class="faq-list">
-                <details>
-                    <summary>O que é Educação Ambiental segundo a Lei 9.795/99?</summary>
-                    <p>A lei define Educação Ambiental como um processo permanente que busca formar pessoas com valores, conhecimentos, habilidades e atitudes voltadas à proteção do meio ambiente, compreendido em sua relação com a sociedade (Art. 1º).</p>
+                
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>O que é Educação Ambiental segundo a Lei 9.795/99?</span>
+                        <div class="arrow-icon"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>A lei define Educação Ambiental como um processo permanente em que o indivíduo e a coletividade constroem valores sociais, conhecimentos, habilidades, atitudes e competências voltadas para a conservação do meio ambiente, bem de uso comum do povo, essencial à sadia qualidade de vida e sua sustentabilidade (Art. 1º).</p>
+                    </div>
                 </details>
-                <details>
-                    <summary>A Educação Ambiental é obrigatória na escola?</summary>
-                    <p>Sim. A lei determina que a Educação Ambiental deve estar presente em todos os níveis e modalidades de ensino, de forma integrada aos conteúdos escolares, e não como disciplina isolada (Art. 2º e Art. 5º).</p>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>A Educação Ambiental é obrigatória na escola?</span>
+                        <div class="arrow-icon"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Sim. A lei determina que a Educação Ambiental deve estar presente em todos os níveis e modalidades do processo educativo, em caráter formal e não-formal. Ela não deve ser implantada como disciplina específica no currículo de ensino, mas sim de forma integrada, contínua e transversal (Art. 2º e Art. 5º).</p>
+                    </div>
                 </details>
-                <details>
-                    <summary>Quais são os objetivos centrais da Educação Ambiental de acordo com a lei?</summary>
-                    <ul>
-                        <li>desenvolver consciência crítica sobre as questões ambientais;</li>
-                        <li>promover a participação da comunidade na defesa do meio ambiente;</li>
-                        <li>incentivar a compreensão integrada das relações entre natureza, sociedade, economia e cultura (Art. 4º).</li>
-                    </ul>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>Quais são os objetivos fundamentais?</span>
+                        <div class="arrow-icon"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>O desenvolvimento de uma compreensão integrada do meio ambiente em suas múltiplas e complexas relações (ecológicas, psicológicas, legais, políticas, sociais, econômicas, científicas, culturais e éticas).</li>
+                            <li>A garantia de democratização das informações ambientais.</li>
+                            <li>O estímulo e o fortalecimento de uma consciência crítica sobre a problemática ambiental e social.</li>
+                            <li>O incentivo à participação individual e coletiva, permanente e responsável.</li>
+                        </ul>
+                    </div>
                 </details>
-                <details>
-                    <summary>A Educação Ambiental deve ocorrer somente na escola?</summary>
-                    <p>Não. A lei estabelece que ela também deve ocorrer em espaços não formais, como comunidades, ONGs, instituições públicas e privadas, movimentos sociais e meios de comunicação (Art. 10º).</p>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>A Educação Ambiental ocorre apenas na escola?</span>
+                        <div class="arrow-icon"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Não. A lei estabelece que a educação ambiental deve ocorrer também em espaços não-formais, envolvendo empresas, entidades de classe, instituições públicas e privadas, ONGs, meios de comunicação e comunidades tradicionais (Art. 10º).</p>
+                    </div>
                 </details>
-                <details>
-                    <summary>Qual o papel do poder público na Educação Ambiental?</summary>
-                    <p>O Estado deve garantir políticas públicas que promovam educação ambiental ampla, participativa e crítica, envolvendo órgãos governamentais, escolas e sociedade civil. Também deve apoiar programas, fiscalizar ações e assegurar participação social nas decisões (Art. 15º e Art. 16º).</p>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>Qual o papel do Poder Público?</span>
+                        <div class="arrow-icon"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>O Poder Público, nos níveis federal, estadual e municipal, deve definir políticas públicas que incorporem a dimensão ambiental, promover a educação ambiental em todos os níveis de ensino e o engajamento da sociedade na conservação, recuperação e melhoria do meio ambiente.</p>
+                    </div>
                 </details>
+
             </div>
-            <div class="center-btn"><a href="#menu-conteudo" class="btn-back">Voltar ao Menu &uarr;</a></div>
+            
+            <div class="center-btn">
+                <a href="#menu-conteudo" class="btn-back">Voltar ao Menu &uarr;</a>
+            </div>
         </div>
     </section>
 
