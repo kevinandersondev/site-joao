@@ -1,70 +1,62 @@
-/* LÓGICA DO CARROSSEL ÚNICO */
-let slideIndex = 1;
+/* LÓGICA DE MÚLTIPLOS CARROSSÉIS */
+let slideIndices = {};
 
-// Inicializa o carrossel mostrando o primeiro slide
 document.addEventListener("DOMContentLoaded", () => {
-    mostrarSlides(slideIndex);
+    // Inicializa todos os carrosséis encontrados na página
+    const carousels = document.querySelectorAll('.mini-carousel');
+    carousels.forEach(carousel => {
+        const id = carousel.id;
+        slideIndices[id] = 1; // Começa no slide 1
+        mostrarSlides(1, id); 
+    });
 });
 
-// Função chamada pelos botões (setas)
-function mudarSlide(n) {
-    mostrarSlides(slideIndex += n);
+function mudarSlideMini(n, carouselId) {
+    mostrarSlides(slideIndices[carouselId] += n, carouselId);
 }
 
-// Função principal que exibe a imagem
-function mostrarSlides(n) {
+function mostrarSlides(n, carouselId) {
     let i;
-    // Pega o container do carrossel único
-    let container = document.getElementById("carousel-unico");
-    if (!container) return; // Segurança
+    let container = document.getElementById(carouselId);
+    if (!container) return;
 
     let slides = container.getElementsByClassName("slide");
     
     // Loop infinito
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
+    if (n > slides.length) { slideIndices[carouselId] = 1 }
+    if (n < 1) { slideIndices[carouselId] = slides.length }
     
     // Esconde todos
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     
-    // Mostra apenas o atual
-    slides[slideIndex - 1].style.display = "block";
+    // Mostra o atual
+    slides[slideIndices[carouselId] - 1].style.display = "block";
 }
 
-
-/* LÓGICA DO QUIZ */
+/* LÓGICA DO QUIZ (APENAS CORES) */
 function verificarResposta(botao, isCorreto) {
-    // Seleciona a div pai que contém os botões e o feedback
-    let parent = botao.closest('.bloco-quiz');
-    let feedback = parent.querySelector('.feedback');
-    let botoes = parent.querySelectorAll('.btn-quiz');
-    
-    // Reseta as cores de todos os botões para branco/padrão
-    botoes.forEach(btn => {
+    let divQuiz = botao.closest('.bloco-quiz');
+    let todosBotoes = divQuiz.querySelectorAll('.btn-quiz');
+
+    // Reseta as cores
+    todosBotoes.forEach(btn => {
         btn.style.backgroundColor = 'white';
         btn.style.color = '#333';
         btn.style.borderColor = '#ccc';
     });
 
     if (isCorreto) {
-        // Acertou: Botão Verde
+        // Verde
         botao.style.backgroundColor = '#1E3A28'; 
         botao.style.color = 'white';
         botao.style.borderColor = '#1E3A28';
-        
-        // Mostra o texto de reflexão
-        if (feedback) feedback.style.display = 'block'; 
     } else {
-        // Errou: Botão Vermelho
+        // Vermelho + Alerta
         botao.style.backgroundColor = '#dc3545'; 
         botao.style.color = 'white';
         botao.style.borderColor = '#dc3545';
-        
         alert("Resposta incorreta. Tente analisar sob a ótica da Educação Ambiental Crítica.");
-        
-        // Esconde o feedback se estiver aberto
-        if (feedback) feedback.style.display = 'none';
     }
 }
