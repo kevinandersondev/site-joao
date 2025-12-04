@@ -532,230 +532,355 @@ img {
 }
 
 /* =========================================
-   SEÇÃO LEI (DESIGN PREMIUM)
+   SEÇÃO LEI (ESTILO REVISTA / EDITORIAL)
    ========================================= */
 
 .lei-section {
-  /* Gradiente Verde Profundo e Elegante */
-  background: linear-gradient(135deg, var(--primary-color) 0%, #0f1f15 100%);
-  color: white;
+  background-color: #1a3c2f; /* Verde Profundo */
+  color: #f4f4f4;
+  padding: 100px 0;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Garante que nada saia da caixa */
 }
 
-/* Container Flex para alinhar imagem e texto */
-.lei-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  max-width: 1000px;
+/* Container do Artigo */
+.lei-magazine-layout {
+  max-width: 900px;
   margin: 0 auto;
+  display: block; /* Essencial para o float */
 }
 
-/* --- COLUNA VISUAL (LIVRO) --- */
-.lei-visual {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* IMAGEM FLUTUANTE (O Segredo) */
+.lei-float-img {
+  float: right; /* Joga para a direita */
+  width: 320px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  /* Faz o texto curvar levemente (se suportado) */
+  shape-outside: circle(50%);
   position: relative;
-}
-
-.book-3d {
-  width: 340px; /* Tamanho do livro */
-  height: auto;
-  transform: rotate(-10deg) perspective(1000px) rotateY(15deg); /* Efeito 3D */
-  transition: transform 0.5s ease;
-  filter: drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.5)); /* Sombra realista */
   z-index: 2;
 }
 
-/* Efeito ao passar o mouse na seção: o livro "flutua" */
-.lei-section:hover .book-3d {
-  transform: rotate(0deg) scale(1.05);
+.book-cover-art {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6)); /* Sombra realista */
+  transform: rotate(-5deg);
+  transition: transform 0.5s ease;
 }
 
-/* --- COLUNA TEXTO --- */
-.lei-content-text {
-  flex: 1.5; /* Ocupa mais espaço que a imagem */
-  text-align: left;
+.lei-section:hover .book-cover-art {
+  transform: rotate(0deg) scale(1.05); /* Animação leve */
 }
 
+/* TIPOGRAFIA */
 .lei-badge {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent-color); /* Dourado */
-  margin-bottom: 15px;
+  letter-spacing: 2px;
   display: inline-block;
+  margin-bottom: 25px;
 }
 
-.lei-content-text h2 {
-  font-family: var(--font-heading);
-  font-size: 2.8rem;
-  margin-bottom: 20px;
+.lei-magazine-layout h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
   line-height: 1.1;
+  margin-bottom: 35px;
   color: white;
 }
 
-.lei-content-text p {
-  font-size: 1.05rem;
-  margin-bottom: 20px;
-  color: #e0e0e0; /* Cinza claro para leitura */
+.lei-text-flow p {
+  font-family: "Montserrat", sans-serif; /* Fonte moderna */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #e0e0e0;
   font-weight: 300;
+  text-align: justify;
 }
 
-.lei-content-text strong {
-  color: white;
+.lei-text-flow strong {
+  color: var(--accent-color);
   font-weight: 600;
 }
 
-/* BOTÃO DOURADO (CTA) */
-.btn-gold {
-  display: inline-block;
-  background: var(--accent-color); /* Dourado */
-  color: var(--primary-color); /* Texto Verde Escuro */
+.destaque-final {
+  font-style: italic;
+  font-size: 1.2rem !important;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 20px;
+  margin-top: 30px;
+  color: white !important;
+}
+
+/* BOTÕES */
+.lei-actions {
+  clear: both; /* Limpa o float para os botões ficarem embaixo */
+  padding-top: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
   padding: 15px 35px;
   border-radius: 50px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.85rem;
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: white;
+  border-color: white;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); /* Brilho dourado */
-  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-gold:hover {
   background: white;
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
 }
 
-/* RESPONSIVIDADE (CELULAR) */
+.conteudo-extra {
+  display: none; /* Começa oculto */
+  animation: fadeIn 0.5s ease;
+}
+
+/* RESPONSIVO */
 @media (max-width: 900px) {
-  .lei-wrapper {
-    flex-direction: column; /* Um embaixo do outro */
+  .lei-float-img {
+    float: none; /* Remove o float no celular */
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto 40px auto;
+    display: block;
+  }
+
+  .lei-magazine-layout h2 {
+    font-size: 2.2rem;
     text-align: center;
   }
 
-  .lei-content-text {
-    text-align: center;
-    padding: 0 20px;
+  .lei-text-flow p {
+    text-align: left;
   }
 
-  .book-3d {
-    width: 220px; /* Menor no celular */
-    margin-bottom: 30px;
+  .lei-badge {
+    display: table;
+    margin: 0 auto 20px auto;
   }
 
-  .lei-content-text h2 {
-    font-size: 2rem;
+  .lei-actions {
+    justify-content: center;
   }
 }
+
 /* =========================================
-   FAQ / ESCLARECIMENTOS (DESIGN MODERNO)
+   FAQ / ESCLARECIMENTOS (COM ÍCONES)
    ========================================= */
+#duvidas {
+  padding-top: 40px; /* Era 80px no padrão, reduzi para subir */
+  padding-bottom: 80px;
+}
+
+/* Ajuste do Título H2 dentro de Dúvidas */
+#duvidas .section-title {
+  margin-bottom: 5px; /* Reduz drasticamente o espaço embaixo do título */
+  margin-top: 0;
+}
+
+/* Ajuste do Subtítulo P dentro de Dúvidas */
+#duvidas .section-subtitle {
+  margin-top: 0; /* Garante que não tenha margem em cima */
+  margin-bottom: 40px; /* Espaço para começar a lista de perguntas */
+  color: #666;
+  font-size: 1.1rem;
+}
 
 .faq-list {
   max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Espaço entre as perguntas */
+  gap: 15px;
 }
 
-/* O Cartão de cada pergunta */
 .faq-item {
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  overflow: hidden; /* Importante para a animação não vazar */
+  border-radius: 15px; /* Mais arredondado */
+  overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .faq-item:hover {
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); /* Sombra ao passar o mouse */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   border-color: var(--primary-color);
 }
 
-/* Quando aberto, destaca a borda */
 .faq-item[open] {
   border-color: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(30, 58, 40, 0.1);
+  box-shadow: 0 5px 15px rgba(30, 58, 40, 0.1);
 }
 
-/* O Cabeçalho (A Pergunta) */
+/* O Cabeçalho (Pergunta) */
 .faq-question {
-  list-style: none; /* Remove a seta padrão feia do navegador */
-  padding: 20px 25px;
+  list-style: none;
+  padding: 15px 25px; /* Ajustei padding para caber o ícone */
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Texto na esquerda, seta na direita */
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--primary-color);
+  justify-content: space-between;
   background-color: #fff;
   transition: background-color 0.3s;
 }
 
-/* Remove marcador padrão no Chrome/Safari */
 .faq-question::-webkit-details-marker {
   display: none;
 }
 
 .faq-item[open] .faq-question {
-  background-color: #f4f8f5; /* Fundo levemente verde quando aberto */
+  background-color: #f4f8f5;
   border-bottom: 1px solid #eee;
 }
 
-/* A Seta Animada (CSS Puro) */
+/* Container do Ícone + Texto */
+.question-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre ícone e texto */
+}
+
+.question-wrapper span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  line-height: 1.4;
+}
+
+/* O Ícone Circular (Estilo igual ao menu) */
+.faq-icon-circle {
+  width: 40px;
+  height: 40px;
+  background: #e8f0ea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Não esmaga se o texto for grande */
+}
+
+.faq-icon-circle img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
+}
+
+/* Seta Animada */
 .arrow-icon {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-right: 2px solid var(--primary-color);
   border-bottom: 2px solid var(--primary-color);
-  transform: rotate(45deg); /* Seta para baixo */
+  transform: rotate(45deg);
   transition: transform 0.3s ease;
-  margin-left: 15px;
+  flex-shrink: 0;
 }
 
-/* Quando aberto, a seta gira para cima */
 .faq-item[open] .arrow-icon {
   transform: rotate(-135deg);
-  border-color: var(--accent-color); /* Fica dourada */
+  border-color: var(--accent-color);
 }
 
-/* A Resposta */
+/* A Resposta (Conteúdo) */
 .faq-answer {
-  padding: 25px;
+  padding: 25px 30px;
   color: #555;
-  line-height: 1.7;
-  font-size: 0.95rem;
+  line-height: 1.8;
+  font-size: 1rem;
   background-color: #fff;
-  animation: slideDown 0.3s ease-out; /* Efeito de deslizar */
+  animation: slideDown 0.3s ease-out;
 }
 
 .faq-answer ul {
-  padding-left: 20px;
-  margin-top: 10px;
+  margin: 15px 0 15px 20px;
 }
-
 .faq-answer li {
   margin-bottom: 8px;
 }
+.faq-answer hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
 
-/* Animação suave ao abrir */
+.text-primary {
+  color: var(--primary-color);
+}
+
+/* Caixas de Destaque no Texto */
+.destaque-box {
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-size: 0.95rem;
+}
+
+.destaque-box.comum {
+  background-color: #f9f9f9;
+  border-left: 4px solid #ccc;
+  font-style: italic;
+  color: #777;
+}
+
+.destaque-box.critico {
+  background-color: #eef7f0; /* Verde muito claro */
+  border-left: 4px solid var(--accent-color);
+}
+
+.destaque-box.final {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+/* Animação */
 @keyframes slideDown {
   from {
     opacity: 0;

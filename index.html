@@ -17,7 +17,7 @@
                 <span class="badge">Lei nº 9.795/99</span>
                 <h1>Educação Ambiental Crítica</h1>
                 <p class="hero-subtitle">No Contexto da Política Nacional de Educação Ambiental</p>
-                <a href="#atualidades" class="btn-scroll">Começar a Navegar</a>
+                <a href="#menu-conteudo" class="btn-scroll">Começar a Navegar</a>
             </div>
         </div>
     </header>
@@ -242,20 +242,37 @@
 
     <section id="lei" class="section-padding lei-section">
         <div class="container">
-            <div class="lei-wrapper">
+            
+            <div class="lei-magazine-layout">
                 
-                <div class="lei-visual">
-                    <img src="images/educacao_ambiental.jpg" alt="Livro da Lei" class="book-3d">
-                    <div class="book-shadow"></div>
+                <div class="lei-float-img">
+                    <img src="images/educacao_ambiental.jpg" alt="Livro da Lei" class="book-cover-art">
                 </div>
 
-                <div class="lei-content-text">
-                    <h2>Conhecendo a Lei nº 9.795/99</h2>
-                    <p>Esta lei institui a <strong>Política Nacional de Educação Ambiental</strong> e é o documento fundamental para educadores e cidadãos.</p>
-                    <p>Ela define que a educação ambiental é um componente essencial e permanente da educação nacional, devendo estar presente, de forma articulada, em todos os níveis e modalidades do processo educativo.</p>
+                <span class="lei-badge">Legislação e Cidadania</span>
+                <h2>Conhecendo a Lei nº 9.795/99:<br>Instrumento de Luta ou Letra Morta?</h2>
+                
+                <div class="lei-text-flow">
+                    <p>A Lei nº 9.795/99, que institui a Política Nacional de Educação Ambiental no Brasil, <strong>não nasceu de concessões generosas do Estado</strong>. Ela é fruto de décadas de lutas de movimentos sociais, educadores populares, comunidades tradicionais e ambientalistas que compreenderam que a defesa dos territórios e da vida exige também a disputa pelo sentido da educação. Conhecer esta lei, portanto, não é apenas um exercício de cidadania formal — é reconhecer-se como herdeiro de batalhas históricas e como sujeito capaz de exigir que o texto legal se transforme em prática concreta.</p>
                     
+                    <div id="texto-oculto" class="conteudo-extra">
+                        <p>Muitas pessoas carregam a ideia de que leis ambientais servem apenas para "proibir" ou "multar", ou ainda que são documentos distantes, escritos em linguagem inacessível e pouco aplicáveis à realidade cotidiana. Outras acreditam que basta a existência de uma lei para que direitos sejam automaticamente garantidos. Queremos provocar um conflito com essas compreensões: <strong>uma lei só se torna viva quando conhecida, apropriada e reivindicada</strong> por quem tem interesse em sua efetivação. Do contrário, permanece como letra morta nos diários oficiais, enquanto a destruição ambiental e a injustiça social seguem seu curso.</p>
+                        
+                        <p>A Lei 9.795/99 estabelece que a Educação Ambiental deve estar presente em todos os níveis e modalidades de ensino, de forma integrada e crítica. Mas o que isso significa na prática? Significa que não basta plantar uma horta na escola ou realizar uma palestra no Dia da Árvore. Significa questionar por que determinadas comunidades sofrem com a falta de água enquanto o agronegócio consome volumes imensos de recursos hídricos. Significa compreender que defender o meio ambiente é defender também os direitos humanos, a soberania alimentar e a democracia participativa.</p>
+                        
+                        <p>Esta seção do site não apresenta a lei como um manual técnico a ser decorado, mas como um <strong>instrumento político a ser apropriado</strong>. Afinal, uma lei não é um ponto de chegada, mas um ponto de partida para novas disputas e conquistas. Convidamos você a conhecer a Lei 9.795/99 não como espectador, mas como protagonista.</p>
+                        
+                        <p class="destaque-final">"Porque conhecer a lei é o primeiro passo para fazer valer o direito. E fazer valer o direito é exercer cidadania ativa, coletiva e transformadora."</p>
+                    </div>
+                </div>
+
+                <div class="lei-actions">
+                    <button id="btn-ler-mais" onclick="toggleLei()" class="btn-outline">
+                        Ler mais &darr;
+                    </button>
+
                     <a href="https://www.planalto.gov.br/ccivil_03/leis/l9795.htm" target="_blank" class="btn-gold">
-                        Ler Texto na Íntegra &rarr;
+                        Acessar Lei Oficial &rarr;
                     </a>
                 </div>
 
@@ -265,63 +282,148 @@
 
     <section id="duvidas" class="section-padding bg-white">
         <div class="container container-narrow">
-            <h2 class="section-title center">Espaço de Esclarecimentos</h2>
-            <!-- <p class="center section-subtitle">Principais dúvidas sobre a legislação e a prática ambiental.</p> -->
+            <h2 class="section-title center style=margin-top: 0;">Espaço de Esclarecimentos</h2>
+            <p class="center section-subtitle">Desconstruindo mitos e aprofundando a Lei nº 9.795/99.</p>
             
             <div class="faq-list">
                 
                 <details class="faq-item">
                     <summary class="faq-question">
-                        <span>O que é Educação Ambiental segundo a Lei 9.795/99?</span>
+                        <div class="question-wrapper">
+                            <div class="faq-icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" alt="?">
+                            </div>
+                            <span>O que é Educação Ambiental segundo a Lei 9.795/99?</span>
+                        </div>
                         <div class="arrow-icon"></div>
                     </summary>
                     <div class="faq-answer">
-                        <p>A lei define Educação Ambiental como um processo permanente em que o indivíduo e a coletividade constroem valores sociais, conhecimentos, habilidades, atitudes e competências voltadas para a conservação do meio ambiente, bem de uso comum do povo, essencial à sadia qualidade de vida e sua sustentabilidade (Art. 1º).</p>
+                        <div class="destaque-box comum">
+                            <strong>Ideia Comum:</strong> “Educação Ambiental é ensinar a separar o lixo e não poluir”.
+                        </div>
+                        <p><strong class="text-primary">Conflito Conceitual:</strong> A lei vai muito além! Define EA como um processo permanente que forma pessoas capazes de compreender que problemas ambientais são também problemas sociais — não existem separados da economia, da cultura e das relações de poder (Art. 1º).</p>
+                        <p><strong>Eixo Comunicacional:</strong> Pense assim: não basta ensinar a “preservar a natureza”. É preciso perguntar: quem está destruindo? Por quê? E quem mais sofre com isso?</p>
                     </div>
                 </details>
 
                 <details class="faq-item">
                     <summary class="faq-question">
-                        <span>A Educação Ambiental é obrigatória na escola?</span>
+                        <div class="question-wrapper">
+                            <div class="faq-icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" alt="?">
+                            </div>
+                            <span>EA é obrigatória nas escolas?</span>
+                        </div>
                         <div class="arrow-icon"></div>
                     </summary>
                     <div class="faq-answer">
-                        <p>Sim. A lei determina que a Educação Ambiental deve estar presente em todos os níveis e modalidades do processo educativo, em caráter formal e não-formal. Ela não deve ser implantada como disciplina específica no currículo de ensino, mas sim de forma integrada, contínua e transversal (Art. 2º e Art. 5º).</p>
+                        <p><strong>Sim, mas com um detalhe crucial:</strong> não como disciplina isolada (Art. 10º, §1º). Deve estar integrada a todas as áreas do conhecimento — na História (conflitos por terra e água), na Matemática (cálculo de pegada ecológica), na Literatura (textos sobre natureza e sociedade).</p>
+                        <hr>
+                        <p><strong>Eixo Pedagógico:</strong> Por que não criar uma disciplina específica? Porque a questão ambiental atravessa tudo. Isolar a EA seria reproduzir a mesma lógica que fragmenta natureza e sociedade.</p>
                     </div>
                 </details>
 
                 <details class="faq-item">
                     <summary class="faq-question">
-                        <span>Quais são os objetivos fundamentais?</span>
+                        <div class="question-wrapper">
+                            <div class="faq-icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" alt="?">
+                            </div>
+                            <span>Quais os objetivos centrais da EA?</span>
+                        </div>
                         <div class="arrow-icon"></div>
                     </summary>
                     <div class="faq-answer">
+                        <p>A lei destaca (Art. 4º):</p>
                         <ul>
-                            <li>O desenvolvimento de uma compreensão integrada do meio ambiente em suas múltiplas e complexas relações (ecológicas, psicológicas, legais, políticas, sociais, econômicas, científicas, culturais e éticas).</li>
-                            <li>A garantia de democratização das informações ambientais.</li>
-                            <li>O estímulo e o fortalecimento de uma consciência crítica sobre a problemática ambiental e social.</li>
-                            <li>O incentivo à participação individual e coletiva, permanente e responsável.</li>
+                            <li>Desenvolver consciência crítica sobre questões socioambientais;</li>
+                            <li>Promover participação comunitária na defesa do ambiente;</li>
+                            <li>Compreender relações integradas entre natureza, sociedade, economia e cultura.</li>
                         </ul>
+                        <div class="destaque-box critico">
+                            <p><strong class="text-primary">Conflito Conceitual:</strong> Muitos materiais educativos focam apenas em comportamentos individuais (fechar torneira, apagar luz). A lei exige uma EA que questione modelos de produção, consumo e distribuição de poder.</p>
+                        </div>
+                        <p><strong>Eixo Comunicacional:</strong> "Não se trata apenas de 'fazer sua parte', mas de entender o jogo inteiro."</p>
                     </div>
                 </details>
 
                 <details class="faq-item">
                     <summary class="faq-question">
-                        <span>A Educação Ambiental ocorre apenas na escola?</span>
+                        <div class="question-wrapper">
+                            <div class="faq-icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" alt="?">
+                            </div>
+                            <span>EA acontece só na escola?</span>
+                        </div>
                         <div class="arrow-icon"></div>
                     </summary>
                     <div class="faq-answer">
-                        <p>Não. A lei estabelece que a educação ambiental deve ocorrer também em espaços não-formais, envolvendo empresas, entidades de classe, instituições públicas e privadas, ONGs, meios de comunicação e comunidades tradicionais (Art. 10º).</p>
+                        <p><strong>Não.</strong> A lei reconhece espaços não formais: comunidades, ONGs, movimentos sociais, sindicatos, empresas, meios de comunicação (Art. 13º).</p>
+                        <p><strong>Perspectiva Crítica:</strong> Historicamente, movimentos sociais (indígenas, quilombolas, atingidos por barragens) fizeram EA muito antes de virar lei. A escola deve dialogar com esses saberes, não ignorá-los.</p>
                     </div>
                 </details>
 
                 <details class="faq-item">
                     <summary class="faq-question">
-                        <span>Qual o papel do Poder Público?</span>
+                        <div class="question-wrapper">
+                            <div class="faq-icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" alt="?">
+                            </div>
+                            <span>Qual o papel do poder público?</span>
+                        </div>
                         <div class="arrow-icon"></div>
                     </summary>
                     <div class="faq-answer">
-                        <p>O Poder Público, nos níveis federal, estadual e municipal, deve definir políticas públicas que incorporem a dimensão ambiental, promover a educação ambiental em todos os níveis de ensino e o engajamento da sociedade na conservação, recuperação e melhoria do meio ambiente.</p>
+                        <p>O Estado deve (Art. 8º e 9º):</p>
+                        <ul>
+                            <li>Garantir políticas públicas amplas e participativas;</li>
+                            <li>Apoiar programas de formação de educadores;</li>
+                            <li>Incentivar pesquisa e divulgação científica;</li>
+                            <li>ssegurar participação social nas decisões ambientais.</li>
+                        </ul>
+                        <p><strong>Eixo Pedagógico:</strong> A lei não diz que o governo apenas "informa" a população. Diz que deve garantir participação efetiva nas decisões.</p>
+                        <p><strong class="text-primary">Conflito Conceitual:</strong> "O meio ambiente é de todos, mas quem decide sobre ele?" — essa pergunta deve estar no centro da EA crítica.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item special-item">
+                    <summary class="faq-question">
+                        <div class="question-wrapper">
+                            <div class="faq-icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" alt="?">
+                            </div>
+                            <span>Síntese pela Perspectiva Crítica</span>
+                        </div>
+                        <div class="arrow-icon"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>A Lei 9.795/99 não se limita a ensinar comportamentos ecológicos. Ela exige uma educação que:</p>
+                        <ul>
+                            <li><strong>Questione desigualdades</strong> — Quem polui mais? Quem sofre mais?</li>
+                            <li><strong>Promova participação</strong> — Não apenas "conscientizar", mas organizar para transformar.</li>
+                            <li><strong>Integre saberes</strong> — Científicos, tradicionais, populares.</li>
+                            <li><strong>Forme cidadãos ativos</strong> — Não espectadores, mas sujeitos de mudança.</li>
+                        </ul>
+                        <div class="destaque-box final">
+                            <p>Um material de EA não deve apenas transmitir informações sobre a lei, mas criar uma experiência de aprendizado que leve as pessoas de uma visão "meio ambiente = natureza intocada" para "meio ambiente = território de lutas, memórias e projetos coletivos de vida".</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="question-wrapper">
+                            <div class="faq-icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4233/4233830.png" alt="?">
+                            </div>
+                            <span>Ainda tem dúvidas?</span>
+                        </div>
+                        <div class="arrow-icon"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: var(--primary-color);">
+                            A EA crítica começa quando questionamos juntos!
+                        </p>
                     </div>
                 </details>
 

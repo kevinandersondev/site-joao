@@ -60,3 +60,20 @@ function verificarResposta(botao, isCorreto) {
         alert("Resposta incorreta. Tente analisar sob a ótica da Educação Ambiental Crítica.");
     }
 }
+/* ==========================================================================
+   LÓGICA "LER MAIS" (SEÇÃO LEI)
+   ========================================================================== */
+
+function toggleLei() {
+    const textoOculto = document.getElementById('texto-oculto');
+    const btnLerMais = document.getElementById('btn-ler-mais');
+
+    if (textoOculto.style.display === 'none' || textoOculto.style.display === '') {
+        textoOculto.style.display = 'block';
+        btnLerMais.innerHTML = 'Ler menos &uarr;';
+    } else {
+        textoOculto.style.display = 'none';
+        btnLerMais.innerHTML = 'Ler mais &darr;';
+        document.getElementById('lei').scrollIntoView({behavior: 'smooth'});
+    }
+}
