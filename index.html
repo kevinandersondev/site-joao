@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Ambiental Crítica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero" style="background-image: url('caminho/para/capa.jpg');">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <span class="badge">Lei nº 9.795/99</span>
+                <h1>Educação Ambiental Crítica</h1>
+                <p class="hero-subtitle">No Contexto da Política Nacional de Educação Ambiental</p>
+                <a href="#atualidades" class="btn-scroll">Começar a Navegar</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="quem-somos" class="section-padding bg-white">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="text-column">
+                    <h2 class="section-title">Quem Somos?</h2>
+                    <p class="lead-text">Somos pesquisadores dedicados ao campo da <strong>Matemática Ambiental</strong> e comprometidos com a construção de uma educação transformadora.</p>
+                    <p>Este ambiente virtual nasce com o propósito de oferecer <strong>espaços de reflexão, diálogo e aprendizagem</strong> sobre a Educação Ambiental Crítica no Brasil, valorizando perspectivas que questionam, problematizam e ampliam o entendimento das relações entre sociedade, natureza e práticas educativas.</p>
+                    <p>Acreditamos que a Educação Ambiental deve ir além da transmissão de informações: ela precisa promover consciência, participação social e mudanças concretas na forma como pensamos e atuamos no mundo.</p>
+                    <p>Por isso, reunimos aqui conteúdos, análises, materiais didáticos e debates fundamentados em autores e pesquisadoras/es reconhecidos no campo, buscando contribuir para uma formação crítica e emancipadora.</p>
+                </div>
+                <div class="highlight-box">
+                    <h3>Nosso Objetivo</h3>
+                    <p>Que este site seja um espaço <strong>acessível, colaborativo e inspirador</strong>, onde educadores, estudantes e interessados encontrem subsídios para repensar práticas, fortalecer a cidadania e refletir sobre os desafios socioambientais contemporâneos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu-conteudo" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title center">Explore os Conteúdos</h2>
+            <div class="grid-icones">
+                <a href="#atualidades" class="card">
+                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/2928/2928883.png" alt="Atualidades"></div>
+                    <h3>Fatos da Atualidade</h3>
+                    <p>Entendendo a Lei Ambiental através de fatos da atualidade.</p>
+                </a>
+                <a href="#especialistas" class="card">
+                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/3074/3074767.png" alt="Especialistas"></div>
+                    <h3>Especialistas Falam</h3>
+                    <p>Educação Ambiental Crítica.</p>
+                </a>
+                <a href="#lei" class="card">
+                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Lei"></div>
+                    <h3>Conhecendo a Lei</h3>
+                    <p>Lei nº 9.795/99.</p>
+                </a>
+                <a href="#duvidas" class="card">
+                    <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/4212/4212818.png" alt="Dúvidas"></div>
+                    <h3>Esclarecimentos</h3>
+                    <p>Espaço de Esclarecimentos.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="atualidades" class="section-padding bg-white">
+        <div class="container container-narrow">
+            <h2 class="section-title center">Entendendo a Lei na Prática</h2>
+            <h3 class="tema-titulo">Região Nordeste: Seca Crônica, Desertificação e Vulnerabilidade Social</h3>
+
+            <div class="bloco-carrossel">
+                <div class="mini-carousel" id="carousel-unico">
+                    <div class="slide fade">
+                        <img src="caminho/para/seca_foto1.jpg" alt="Solo rachado" class="img-slide">
+                        <div class="caption">Solo rachado e agricultura perdida</div>
+                    </div>
+                    <div class="slide fade">
+                        <img src="caminho/para/seca_foto2.jpg" alt="Reservatórios secos" class="img-slide">
+                        <div class="caption">Reservatórios secos e barcos encalhados</div>
+                    </div>
+                    <div class="slide fade">
+                        <img src="caminho/para/seca_foto3.jpg" alt="Plantação seca" class="img-slide">
+                        <div class="caption">Lavoura perdida pela estiagem</div>
+                    </div>
+                    
+                    <a class="prev" onclick="mudarSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="mudarSlide(1)">&#10095;</a>
+                </div>
+            </div>
+
+            <div class="bloco-quiz">
+                <div class="questao-box">
+                    <p class="quiz-pergunta">
+                        <strong>QUESTÃO:</strong> Analisando imagens de estiagem prolongada no Nordeste — que afeta rios, lavouras e comunidades inteiras — e considerando o Art. 4º, I e V da Lei nº 9.795/99, que orienta a educação ambiental para a compreensão integrada do meio ambiente e para a participação crítica da sociedade, qual prática educativa está mais alinhada à Educação Ambiental Crítica?
+                    </p>
+
+                    <button class="btn-quiz" onclick="verificarResposta(this, false)">
+                        A) ( ) Explicar que a seca é exclusivamente um fenômeno natural, desconsiderando fatores sociais, políticos e econômicos que agravam seus impactos.
+                    </button>
+
+                    <button class="btn-quiz" onclick="verificarResposta(this, false)">
+                        B) ( ) Incentivar apenas que cada família encontre soluções individuais para obter água, sem analisar a responsabilidade do Estado, a falta de políticas públicas e a desigualdade de acesso.
+                    </button>
+
+                    <button class="btn-quiz" onclick="verificarResposta(this, true)">
+                        C) ( ) Promover discussões sobre políticas públicas de convivência com o semiárido, gestão democrática da água, programas de cisternas, agricultura sustentável, justiça socioambiental, vulnerabilidade das populações e alternativas de desenvolvimento regional que respeitem o território.
+                    </button>
+                </div>
+
+                <div class="feedback" style="display:none;">
+                    <h4>REFLEXÃO</h4>
+                    <p>Diante de imagens de rios secos, paisagens áridas e populações diretamente afetadas pela seca, a Educação Ambiental prevista na Lei nº 9.795/99 não pode limitar-se a ensinar práticas individuais de economia de água.</p>
+                    <p>Ao contrário, deve promover uma compreensão crítica das causas estruturais da crise hídrica, evidenciando que a escassez de água é resultado não apenas de fatores climáticos, mas também de decisões políticas, ausência de planejamento estatal, má gestão dos recursos hídricos e desigualdades históricas.</p>
+                    
+                    <p>Assim, a educação ambiental deve:</p>
+                    <ul>
+                        <li><strong>Desnaturalizar a seca</strong>, mostrando que seus impactos são ampliados pela falta de investimentos públicos em infraestrutura hídrica, como cisternas, adutoras, sistemas de irrigação sustentáveis e políticas de convivência com o semiárido;</li>
+                        <li><strong>Responsabilizar governos e gestores públicos</strong>, destacando o papel das políticas públicas de acesso à água, fiscalização ambiental e proteção de nascentes, que, quando negligenciadas, intensificam o sofrimento das populações mais vulneráveis;</li>
+                        <li><strong>Promover participação e controle social</strong>, conforme prevê a Lei 9.795/99 (Art. 3º e Art. 4º), incentivando comunidades a compreenderem seus direitos, cobrarem transparência e exigirem políticas ambientais e climáticas eficazes;</li>
+                        <li><strong>Relacionar mudanças climáticas a escolhas políticas</strong>, mostrando que o desmatamento, o uso predatório do solo e a ausência de transição energética agravam eventos extremos e comprometem recursos hídricos;</li>
+                        <li><strong>Formar cidadãos críticos</strong>, capazes de analisar não só o fenômeno natural, mas também o contexto político-econômico que determina quem sofre mais com a crise e quem se beneficia de modelos de exploração ambiental.</li>
+                    </ul>
+                    <p>Dessa forma, a Educação Ambiental Crítica transforma a seca de um “problema natural” para um problema político e social, convidando estudantes e comunidades a refletirem sobre seus direitos, responsabilizarem governos e participarem ativamente na construção de políticas públicas que garantam o uso sustentável da água e a justiça socioambiental.</p>
+                </div>
+            </div>
+
+            <div class="center-btn">
+                <a href="#menu-conteudo" class="btn-back">Voltar ao Menu &uarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="especialistas" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title center">Especialistas Falam</h2>
+            <div class="grid-videos">
+                <div class="video-card">
+                    <div class="profile-header">
+                        <img src="caminho/para/foto_carlos.jpg" alt="Carlos" class="profile-img">
+                        <h3>Carlos Frederico Bernardo Loureiro</h3>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/gf5bzHF6hOSVgpQ4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="profile-header">
+                        <img src="caminho/para/foto_philippe.jpg" alt="Philippe" class="profile-img">
+                        <h3>Philippe Pomier Layrargues</h3>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/7-W2Eu6MFXGIwNWX" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="profile-header">
+                        <img src="caminho/para/foto_marcos.jpg" alt="Marcos" class="profile-img">
+                        <h3>Marcos Sorrentino</h3>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/gzwCj7eqPqjX4IK4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn"><a href="#menu-conteudo" class="btn-back">Voltar ao Menu &uarr;</a></div>
+        </div>
+    </section>
+
+    <section id="lei" class="section-padding bg-primary text-white">
+        <div class="container center">
+            <h2 class="section-title white-text">Conhecendo a Lei nº 9.795/99</h2>
+            <div class="lei-content">
+                <img src="caminho/para/capa_livro_lei.jpg" alt="Capa Lei" class="book-cover">
+                <div class="lei-info">
+                    <p>Coleção Ambiental Educação Ambiental. Acesso direto ao texto da lei no Planalto.</p>
+                    <a href="https://www.planalto.gov.br/ccivil_03/leis/l9795.htm" target="_blank" class="btn-cta">Ler Lei &rarr;</a>
+                </div>
+            </div>
+            <div class="center-btn"><a href="#menu-conteudo" class="btn-back" style="color: white; border-color: white;">Voltar ao Menu &uarr;</a></div>
+        </div>
+    </section>
+
+    <section id="duvidas" class="section-padding bg-white">
+        <div class="container container-narrow">
+            <h2 class="section-title center">Espaço de Esclarecimentos</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>O que é Educação Ambiental segundo a Lei 9.795/99?</summary>
+                    <p>A lei define Educação Ambiental como um processo permanente que busca formar pessoas com valores, conhecimentos, habilidades e atitudes voltadas à proteção do meio ambiente, compreendido em sua relação com a sociedade (Art. 1º).</p>
+                </details>
+                <details>
+                    <summary>A Educação Ambiental é obrigatória na escola?</summary>
+                    <p>Sim. A lei determina que a Educação Ambiental deve estar presente em todos os níveis e modalidades de ensino, de forma integrada aos conteúdos escolares, e não como disciplina isolada (Art. 2º e Art. 5º).</p>
+                </details>
+                <details>
+                    <summary>Quais são os objetivos centrais da Educação Ambiental de acordo com a lei?</summary>
+                    <ul>
+                        <li>desenvolver consciência crítica sobre as questões ambientais;</li>
+                        <li>promover a participação da comunidade na defesa do meio ambiente;</li>
+                        <li>incentivar a compreensão integrada das relações entre natureza, sociedade, economia e cultura (Art. 4º).</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>A Educação Ambiental deve ocorrer somente na escola?</summary>
+                    <p>Não. A lei estabelece que ela também deve ocorrer em espaços não formais, como comunidades, ONGs, instituições públicas e privadas, movimentos sociais e meios de comunicação (Art. 10º).</p>
+                </details>
+                <details>
+                    <summary>Qual o papel do poder público na Educação Ambiental?</summary>
+                    <p>O Estado deve garantir políticas públicas que promovam educação ambiental ampla, participativa e crítica, envolvendo órgãos governamentais, escolas e sociedade civil. Também deve apoiar programas, fiscalizar ações e assegurar participação social nas decisões (Art. 15º e Art. 16º).</p>
+                </details>
+            </div>
+            <div class="center-btn"><a href="#menu-conteudo" class="btn-back">Voltar ao Menu &uarr;</a></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Educação Ambiental Crítica.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
