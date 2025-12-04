@@ -436,35 +436,92 @@ img {
   margin-bottom: 8px;
 }
 
-/* ESPECIALISTAS */
+/* =========================================
+   ESPECIALISTAS (DESIGN PREMIUM & ALINHADO)
+   ========================================= */
+
 .grid-videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Garante colunas iguais e responsivas */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  margin-top: 40px;
 }
+
+/* O Cartão do Especialista */
 .video-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #eee;
+  padding: 30px; /* Espaço interno generoso */
+  border-radius: 20px; /* Bordas bem arredondadas */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  transition: all 0.4s ease;
+
+  /* Centraliza tudo verticalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza a foto horizontalmente */
   text-align: center;
+  height: 100%; /* Força todos a terem a mesma altura */
 }
+
+/* Efeito ao passar o mouse */
+.video-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(30, 58, 40, 0.15);
+}
+
+/* Container do Perfil (Foto + Nome) */
+.profile-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Garante que a foto fique no meio */
+  margin-bottom: 20px;
+}
+
+/* A Foto de Perfil */
 .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 100px !important;
+  height: 100px !important;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 3px solid #e8f0ea;
+
+  /* Borda e sombra para destacar */
+  border: 4px solid #e8f0ea;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* O Nome do Especialista */
+.video-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin: 0;
+
+  /* TRUQUE DE ALINHAMENTO: */
+  /* Define uma altura mínima para o título. 
+       Assim, se um nome tiver 2 linhas e outro 1, 
+       os vídeos continuarão alinhados embaixo. */
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* O Vídeo (YouTube) */
 .video-wrapper {
+  width: 100%;
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* Proporção 16:9 (Padrão YouTube) */
   height: 0;
   overflow: hidden;
-  border-radius: 8px;
-  margin-top: 15px;
+  border-radius: 15px; /* Arredonda os cantos do vídeo */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: #000;
 }
+
 .video-wrapper iframe {
   position: absolute;
   top: 0;
