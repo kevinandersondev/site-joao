@@ -24,7 +24,6 @@ img {
   display: block;
 }
 
-/* UTILS */
 .section-padding {
   padding: 60px 20px;
 }
@@ -47,7 +46,7 @@ img {
   max-width: 1100px;
   margin: 0 auto;
 }
-/* .container-narrow foi removido onde não é mais necessário para igualar larguras */
+
 .center {
   text-align: center;
 }
@@ -78,7 +77,6 @@ img {
    ========================================= */
 .hero {
   height: 90vh;
-  /* Usando uma imagem online garantida para testar */
   background-image: url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1920&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
@@ -98,10 +96,8 @@ img {
   width: 100%;
   height: 100%;
 
-  /* Verde escuro sofisticado com transparência */
   background: rgba(30, 58, 40, 0.75);
 
-  /* Blur leve para focar no texto */
   backdrop-filter: blur(4px);
 
   display: flex;
@@ -114,8 +110,6 @@ img {
 /* =========================================
    ESTILO DOS TEXTOS DO HEADER (PREMIUM)
    ========================================= */
-
-/* A caixa de conteúdo principal */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -123,7 +117,6 @@ img {
   animation: fadeInUp 1.2s ease-out;
 }
 
-/* ETIQUETA (BADGE) */
 .badge {
   background: var(--accent-color);
   color: var(--primary-color);
@@ -132,31 +125,30 @@ img {
   margin-bottom: 30px;
   display: inline-block;
 
-  /* Fonte moderna */
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-size: 0.8rem;
-  font-weight: 800; /* Bem grosso */
-  letter-spacing: 2px; /* Espaçamento chique */
+  font-weight: 800; 
+  letter-spacing: 2px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* TÍTULO PRINCIPAL */
 .hero-content h1 {
   font-family: "Playfair Display", serif;
-  font-size: 4.5rem; /* Fonte bem grande */
+  font-size: 4.5rem;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 25px;
-  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para leitura */
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* SUBTÍTULO */
 .hero-content .hero-subtitle {
-  font-family: "Montserrat", sans-serif; /* Fonte limpa */
+  font-family: "Montserrat", sans-serif; 
   color: #f0f0f0;
   font-size: 1.25rem;
-  font-weight: 300; /* Fonte fina e elegante */
+  font-weight: 300;
   line-height: 1.6;
   margin-bottom: 45px;
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
@@ -178,18 +170,17 @@ img {
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.1); /* Fundo vidro */
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
 }
 
 .btn-scroll:hover {
   background: white;
   color: var(--primary-color);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); /* Brilho ao passar o mouse */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
   transform: translateY(-3px);
 }
 
-/* Responsividade para celular */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.8rem;
@@ -203,72 +194,127 @@ img {
   }
 }
 
-/* QUEM SOMOS & MENU */
-.content-wrapper {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.text-column {
-  flex: 2;
-  min-width: 300px;
-}
-.lead-text {
-  font-size: 1.1rem;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-.highlight-box {
-  flex: 1;
-  background: var(--primary-color);
-  color: white;
-  padding: 30px;
-  border-radius: 0 40px 0 40px;
-  min-width: 280px;
-}
-.highlight-box h3 {
-  color: var(--accent-color);
-  margin-bottom: 10px;
-  font-family: var(--font-heading);
-}
-
 /* =========================================
-   MENU DE ÍCONES (DESIGN PREMIUM)
+   QUEM SOMOS - LAYOUT PREMIUM & ELEGANTE
    ========================================= */
 
-/* Grid Responsivo e Centralizado */
+.layout-premium {
+  display: flex;
+  gap: 60px; /* Espaço generoso entre texto e caixa */
+  align-items: flex-start;
+  position: relative;
+}
+
+/* --- COLUNA DE TEXTO (ESQUERDA) --- */
+.coluna-texto {
+  flex: 2;
+  font-size: 1.05rem;
+  color: #333; /* Cinza escuro para leitura confortável */
+  line-height: 1.8; /* Bom espaçamento entre linhas */
+  text-align: justify; /* Elegância de jornal/livro */
+}
+
+.coluna-texto p {
+  margin-bottom: 25px;
+}
+
+/* Destaque para os negritos no texto */
+.coluna-texto strong {
+  color: var(--primary-color); /* O negrito fica Verde Escuro */
+  font-weight: 700;
+}
+
+/* --- COLUNA DA CAIXA (DIREITA) --- */
+.coluna-box {
+  flex: 1;
+  min-width: 320px;
+
+  /* EFEITO STICKY: A caixa acompanha a leitura */
+  position: sticky;
+  top: 120px;
+}
+
+/* Design da Caixa */
+.box-objetivos-premium {
+  background-color: var(--primary-color); /* Fundo Verde #1e3a28 */
+  color: white;
+  padding: 45px 35px;
+  border: 1px solid var(--accent-color); /* Borda Dourada Fina */
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-dourado {
+  font-family: var(--font-heading); /* Playfair Display */
+  color: var(--accent-color); /* Dourado */
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: none; /* Remove bordas padrão se houver */
+}
+
+/* Linha Dourada Decorativa */
+.linha-decorativa {
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.box-objetivos-premium {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 45px 35px;
+  border: 1px solid var(--accent-color);
+  border-radius: 30px 0 30px 0;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.box-objetivos-premium strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .layout-premium {
+    flex-direction: column;
+  }
+  .coluna-box {
+    position: static;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+/* Seção menu-conteudos */
+
 .grid-icones {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(240px, 1fr)
-  ); /* Colunas flexíveis */
-  gap: 30px; /* Espaço entre os cards */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
   margin-top: 40px;
 }
 
-/* O Cartão (Card) */
 .card {
   background: white;
-  padding: 40px 25px; /* Mais espaço interno */
-  border-radius: 20px; /* Bordas bem arredondadas */
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Borda muito sutil */
+  padding: 40px 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
   text-decoration: none;
   color: inherit;
-
-  /* Flexbox para alinhar tudo verticalmente */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Alinha no topo */
+  justify-content: flex-start;
 
-  transition: all 0.4s ease; /* Animação suave */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra inicial leve */
-  height: 100%; /* Garante que todos tenham a mesma altura */
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  height: 100%;
 }
 
-/* Efeito Hover (Ao passar o mouse) */
 .card:hover {
   transform: translateY(-10px); /* Sobe um pouco */
   box-shadow: 0 20px 40px rgba(30, 58, 40, 0.15); /* Sombra verde suave */
@@ -1165,4 +1211,60 @@ footer {
 
   /* AQUI ESTÁ A MÁGICA: */
   animation: pulseBlur 8s infinite ease-in-out;
+}
+/* =========================================
+   BOTÃO VOLTAR AO MENU (PREMIUM)
+   ========================================= */
+
+/* O Container que centraliza o botão */
+.center-btn {
+  text-align: center;
+  margin-top: 60px; /* Dá um bom respiro do conteúdo acima */
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 5; /* Garante que fique acima de partículas ou fundos */
+}
+
+/* O Estilo do Botão */
+.btn-back {
+  display: inline-flex; /* Melhor para alinhar texto e setinha */
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacinho entre o texto e a seta */
+
+  /* Visual Inicial (Outline / Contorno) */
+  background-color: transparent;
+  color: var(--primary-color); /* Verde Escuro */
+  border: 1px solid var(--primary-color);
+
+  /* Tamanho e Forma */
+  padding: 14px 40px;
+  border-radius: 50px; /* Borda totalmente redonda */
+
+  /* Tipografia */
+  font-family: "Montserrat", sans-serif; /* Fonte limpa e moderna */
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Espaçamento chique entre letras */
+  text-decoration: none;
+
+  /* Transição Suave */
+  transition: all 0.4s ease;
+}
+
+/* Efeito Hover (Ao passar o mouse) */
+.btn-back:hover {
+  background-color: var(--primary-color); /* Vira Verde Sólido */
+  color: white; /* Texto fica branco */
+  border-color: var(--primary-color);
+
+  transform: translateY(-5px); /* Sobe levemente */
+  box-shadow: 0 10px 20px rgba(30, 58, 40, 0.15); /* Sombra elegante */
+}
+
+/* Efeito na Setinha (Se houver ícone ou caractere) */
+.btn-back:hover span,
+.btn-back:hover i {
+  transform: translateY(-2px); /* Anima a setinha também */
 }
