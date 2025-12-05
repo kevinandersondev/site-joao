@@ -82,73 +82,83 @@
     </section>
 
     <section id="atualidades" class="section-padding bg-white">
-    <div class="container"> 
-        <h2 class="section-title center">Entendendo a Lei na Prática</h2>
+        <canvas id="neural-canvas"></canvas>
 
-        <div class="tema-wrapper">
-            <h3 class="tema-titulo">Região Nordeste<br> 
-                Seca Crônica, Desertificação e Vulnerabilidade Social (Sertão Nordestino)
-            </h3>
+        <div class="container"> 
+            <h2 class="section-title center">Entendendo a Lei na Prática</h2>
 
-            <div class="bloco-carrossel">
-                <div class="mini-carousel" id="carousel-seca">
-                    <div class="slide fade">
-                        <img src="images/solo_rachado.jpeg" alt="Solo rachado" class="img-slide">
-                        <div class="caption">Solo rachado pela estiagem</div>
+            <div class="tema-wrapper">
+                <h3 class="tema-titulo">Região Nordeste<br> 
+                    Seca Crônica, Desertificação e Vulnerabilidade Social (Sertão Nordestino)
+                </h3>
+
+                <div class="bloco-carrossel">
+                    <div class="mini-carousel" id="carousel-seca">
+                        <div class="slide fade">
+                            <img src="images/solo_rachado.jpeg" alt="Solo rachado" class="img-slide">
+                            <div class="caption">Solo rachado pela estiagem</div>
+                        </div>
+                        <div class="slide fade">
+                            <img src="images/acude-seco1.jpg" alt="Barco no seco" class="img-slide">
+                            <div class="caption">Reservatórios secos</div>
+                        </div>
+                        <div class="slide fade">
+                            <img src="images/agricultura_perdida.jpg" alt="Plantação perdida" class="img-slide">
+                            <div class="caption">Agricultura perdida</div>
+                        </div>
+                        <a class="prev" onclick="mudarSlideMini(-1, 'carousel-seca')">&#10094;</a>
+                        <a class="next" onclick="mudarSlideMini(1, 'carousel-seca')">&#10095;</a>
                     </div>
-                    <div class="slide fade">
-                        <img src="images/acude-seco1.jpg" alt="Barco no seco" class="img-slide">
-                        <div class="caption">Reservatórios secos</div>
+                </div>
+
+                <div class="bloco-quiz" id="quiz-seca">
+                    <p class="quiz-pergunta">
+                        <strong>QUESTÃO:</strong> Duas professoras estão planejando um projeto sobre a seca no sertão:<br><br>
+                        <strong>Professora Ana diz:</strong> "Vamos ensinar às crianças a economizarem água em casa, criarem cisternas com as famílias e se adaptarem ao clima semiárido. É importante que cada família aprenda a conviver com a seca."<br><br>
+                        <strong>Professora Beatriz responde:</strong> "Concordo, mas também precisamos estudar porque algumas comunidades recebem água encanada e outras não, quem decide sobre a construção de açudes e adutoras, e porque os investimentos públicos são tão desiguais."<br><br>
+                        Com base na Lei 9.795/99 (Art. 4º, que enfatiza 'compreensão integrada' e 'participação cidadã'), qual abordagem está mais alinhada à Educação Ambiental Crítica?
+                    </p>
+
+                    <div class="quiz-options">
+                        <button class="btn-quiz" onclick="selecionarOpcao(this)" data-correct="false">
+                            a) Apenas a proposta da Professora Ana, pois soluções práticas e adaptação são o mais importante
+                        </button>
+                        
+                        <button class="btn-quiz" onclick="selecionarOpcao(this)" data-correct="false">
+                            b) Apenas a proposta da Professora Beatriz, pois conscientização política é suficiente
+                        </button>
+                        
+                        <button class="btn-quiz" onclick="selecionarOpcao(this)" data-correct="true">
+                            c) As duas abordagens juntas, pois combinam soluções práticas com análise crítica das decisões políticas e desigualdades estruturais
+                        </button>
                     </div>
-                    <div class="slide fade">
-                        <img src="images/agricultura_perdida.jpg" alt="Plantação perdida" class="img-slide">
-                        <div class="caption">Agricultura perdida</div>
+
+                    <div class="quiz-footer">
+                        <div id="feedback-msg" class="feedback-msg" style="display: none;"></div>
+                        
+                        <button class="btn-enviar" onclick="enviarRespostaQuiz()">Enviar Resposta</button>
                     </div>
-                    <a class="prev" onclick="mudarSlideMini(-1, 'carousel-seca')">&#10094;</a>
-                    <a class="next" onclick="mudarSlideMini(1, 'carousel-seca')">&#10095;</a>
+                </div>
+
+                <div class="reflexao-box">
+                    <h4>REFLEXÃO</h4>
+                    <p>Diante de imagens de rios secos, paisagens áridas e populações diretamente afetadas pela seca, a Educação Ambiental prevista na Lei nº 9.795/99 não pode limitar-se a ensinar práticas individuais de economia de água. Ao contrário, deve promover uma compreensão crítica das causas estruturais da crise hídrica, evidenciando que a escassez de água é resultado não apenas de fatores climáticos, mas também de decisões políticas, ausência de planejamento estatal, má gestão dos recursos hídricos e desigualdades históricas.</p>
+                    <p>Assim, a educação ambiental deve:</p>
+                    <ul>
+                        <li><strong>Desnaturalizar a seca</strong>, mostrando que seus impactos são ampliados pela falta de investimentos públicos em infraestrutura hídrica, como cisternas, adutoras, sistemas de irrigação sustentáveis e políticas de convivência com o semiárido;</li>
+                        <li><strong>Responsabilizar governos e gestores públicos</strong>, destacando o papel das políticas públicas de acesso à água, fiscalização ambiental e proteção de nascentes, que, quando negligenciadas, intensificam o sofrimento das populações mais vulneráveis;</li>
+                        <li><strong>Promover participação e controle social</strong>, conforme prevê a Lei 9.795/99 (Art. 3º e Art. 4º), incentivando comunidades a compreenderem seus direitos, cobrarem transparência e exigirem políticas ambientais e climáticas eficazes;</li>
+                        <li><strong>Relacionar mudanças climáticas a escolhas políticas</strong>, mostrando que o desmatamento, o uso predatório do solo e a ausência de transição energética agravam eventos extremos e comprometem recursos hídricos;</li>
+                        <li><strong>Formar cidadãos críticos</strong>, capazes de analisar não só o fenômeno natural, mas também o contexto político-econômico que determina quem sofre mais com a crise e quem se beneficia de modelos de exploração ambiental.</li>
+                    </ul>
+                    <p>Dessa forma, a Educação Ambiental Crítica transforma a seca de um “problema natural” para um problema político e social, convidando estudantes e comunidades a refletirem sobre seus direitos, responsabilizarem governos e participarem ativamente na construção de políticas públicas que garantam o uso sustentável da água e a justiça socioambiental.</p>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #28a745; margin-top: 20px;">
+                        <p><strong>Para pensar:</strong> Uma educação ambiental que ensina apenas 'economia de água' cumpre o objetivo de 'compreensão integrada' proposto pela Lei 9.795/99?</p>
+                        <p style="margin-bottom: 0;">Lembre-se: A seca é um fenômeno natural <strong>AGRAVADO</strong> por decisões políticas, falta de investimento e desigualdade estrutural.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="bloco-quiz">
-                <p class="quiz-pergunta">
-                    <strong>QUESTÃO:</strong> Duas professoras estão planejando um projeto sobre a seca no sertão:<br><br>
-                    <strong>Professora Ana diz:</strong> "Vamos ensinar às crianças a economizarem água em casa, criarem cisternas com as famílias e se adaptarem ao clima semiárido. É importante que cada família aprenda a conviver com a seca."<br><br>
-                    <strong>Professora Beatriz responde:</strong> "Concordo, mas também precisamos estudar porque algumas comunidades recebem água encanada e outras não, quem decide sobre a construção de açudes e adutoras, e porque os investimentos públicos são tão desiguais."<br><br>
-                    Com base na Lei 9.795/99 (Art. 4º, que enfatiza 'compreensão integrada' e 'participação cidadã'), qual abordagem está mais alinhada à Educação Ambiental Crítica?
-                </p>
-                
-                <button class="btn-quiz" onclick="verificarResposta(this, false)">
-                    a) Apenas a proposta da Professora Ana, pois soluções práticas e adaptação são o mais importante
-                </button>
-                
-                <button class="btn-quiz" onclick="verificarResposta(this, false)">
-                    b) Apenas a proposta da Professora Beatriz, pois conscientização política é suficiente
-                </button>
-                
-                <button class="btn-quiz" onclick="verificarResposta(this, true)">
-                    c) As duas abordagens juntas, pois combinam soluções práticas com análise crítica das decisões políticas e desigualdades estruturais
-                </button>
-            </div>
-
-            <div class="reflexao-box">
-                <h4>REFLEXÃO</h4>
-                <p>Diante de imagens de rios secos, paisagens áridas e populações diretamente afetadas pela seca, a Educação Ambiental prevista na Lei nº 9.795/99 não pode limitar-se a ensinar práticas individuais de economia de água. Ao contrário, deve promover uma compreensão crítica das causas estruturais da crise hídrica, evidenciando que a escassez de água é resultado não apenas de fatores climáticos, mas também de decisões políticas, ausência de planejamento estatal, má gestão dos recursos hídricos e desigualdades históricas.</p>
-                <p>Assim, a educação ambiental deve:</p>
-                <ul>
-                    <li><strong>Desnaturalizar a seca</strong>, mostrando que seus impactos são ampliados pela falta de investimentos públicos em infraestrutura hídrica, como cisternas, adutoras, sistemas de irrigação sustentáveis e políticas de convivência com o semiárido;</li>
-                    <li><strong>Responsabilizar governos e gestores públicos</strong>, destacando o papel das políticas públicas de acesso à água, fiscalização ambiental e proteção de nascentes, que, quando negligenciadas, intensificam o sofrimento das populações mais vulneráveis;</li>
-                    <li><strong>Promover participação e controle social</strong>, conforme prevê a Lei 9.795/99 (Art. 3º e Art. 4º), incentivando comunidades a compreenderem seus direitos, cobrarem transparência e exigirem políticas ambientais e climáticas eficazes;</li>
-                    <li><strong>Relacionar mudanças climáticas a escolhas políticas</strong>, mostrando que o desmatamento, o uso predatório do solo e a ausência de transição energética agravam eventos extremos e comprometem recursos hídricos;</li>
-                    <li><strong>Formar cidadãos críticos</strong>, capazes de analisar não só o fenômeno natural, mas também o contexto político-econômico que determina quem sofre mais com a crise e quem se beneficia de modelos de exploração ambiental.</li>
-                </ul>
-                <p>Dessa forma, a Educação Ambiental Crítica transforma a seca de um “problema natural” para um problema político e social, convidando estudantes e comunidades a refletirem sobre seus direitos, responsabilizarem governos e participarem ativamente na construção de políticas públicas que garantam o uso sustentável da água e a justiça socioambiental.</p>
-                
-                <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #28a745; margin-top: 20px;">
-                    <p><strong>Para pensar:</strong> Uma educação ambiental que ensina apenas 'economia de água' cumpre o objetivo de 'compreensão integrada' proposto pela Lei 9.795/99?</p>
-                    <p style="margin-bottom: 0;">Lembre-se: A seca é um fenômeno natural <strong>AGRAVADO</strong> por decisões políticas, falta de investimento e desigualdade estrutural.</p>
-                </div>
-            </div>
-        </div>
 
         <div class="center-btn">
             <a href="#menu-conteudo" class="btn-back">Voltar ao Menu &uarr;</a>
