@@ -84,39 +84,38 @@ function enviarRespostaQuiz() {
     const selecionado = blocoQuiz.querySelector('.btn-quiz.selected');
     const feedbackMsg = document.getElementById('feedback-msg');
 
-    // Remove classes de cor anteriores
     feedbackMsg.className = 'feedback-msg'; 
 
-    // Validação: Nada selecionado
+    // Nada selecionado
     if (!selecionado) {
         feedbackMsg.innerHTML = "Por favor, selecione uma alternativa antes de enviar.";
         feedbackMsg.classList.add('atencao');
-        feedbackMsg.style.display = 'block'; // Força aparecer
+        feedbackMsg.style.display = 'block';
         return;
     }
 
     const isCorreto = selecionado.getAttribute('data-correct') === 'true';
 
     if (isCorreto) {
-        // --- ACERTOU ---
+        // Acertou
         selecionado.classList.remove('selected');
         selecionado.classList.add('correct');
         
         feedbackMsg.innerHTML = "Parabéns! Você marcou a resposta correta!";
         feedbackMsg.classList.add('sucesso');
-        feedbackMsg.style.display = 'block'; // Força aparecer
+        feedbackMsg.style.display = 'block';
     } else {
-        // --- ERROU ---
+        // Errou
         selecionado.classList.remove('selected');
         selecionado.classList.add('wrong');
         
         feedbackMsg.innerHTML = "Resposta errada! Tente novamente.";
         feedbackMsg.classList.add('erro');
-        feedbackMsg.style.display = 'block'; // Força aparecer
+        feedbackMsg.style.display = 'block';
     }
 }
 
-/* LÓGICA "LER MAIS" (MANTIDA IGUAL) */
+// Lógica Ler mais - Seção Lei
 function toggleLei() {
     const textoOculto = document.getElementById('texto-oculto');
     const btnLerMais = document.getElementById('btn-ler-mais');
@@ -131,9 +130,7 @@ function toggleLei() {
     }
 }
 
-/* =========================================
-   NEURAL CANVAS (VERSÃO FINAL: MOUSE CORRIGIDO + TAMANHO MAIOR)
-   ========================================= */
+// Animação Particulas Neural Canvas
 document.addEventListener("DOMContentLoaded", () => {
     initNeuralCanvas();
 });
@@ -142,33 +139,23 @@ function initNeuralCanvas() {
     const canvas = document.getElementById('neural-canvas');
     if (!canvas) return;
     
-    // Pega a seção pai para rastrear o mouse (já que o canvas está no fundo)
     const parentSection = canvas.parentElement; 
-
     const ctx = canvas.getContext('2d');
     let width, height;
     let particles = [];
     
-    // Rastreamento do mouse
     let mouse = {
         x: null,
         y: null,
-        radius: 180 // Aumentei o alcance da conexão com o mouse
+        radius: 150 
     };
 
-    // CONFIGURAÇÕES
     const properties = {
-        bgColor: 'rgba(255, 255, 255, 0)',
-        
-        // Verde Sólido (#1e3a28)
-        particleColor: 'rgba(30, 58, 40, 1)', 
-        
-        // Linhas Verdes Transparentes
+        rgbBase: '30, 58, 40', 
         lineColor: 'rgba(30, 58, 40, 0.4)',   
-        
-        particleRadius: 6,  // AUMENTADO (era 3, agora é 6)
-        particleCount: 100, // Ajustado para não ficar poluído com bolinhas grandes
-        lineLength: 150,    
+        particleRadius: 3,  
+        particleCount: 200, 
+        lineLength: 120,    
         velocity: 0.6       
     };
 
@@ -177,8 +164,6 @@ function initNeuralCanvas() {
         height = canvas.height = parentSection.offsetHeight;
     }
 
-    // CORREÇÃO DO MOUSE:
-    // Ouve a SEÇÃO INTEIRA, não apenas o canvas
     parentSection.addEventListener('mousemove', (event) => {
         const rect = canvas.getBoundingClientRect();
         mouse.x = event.clientX - rect.left;
@@ -196,6 +181,10 @@ function initNeuralCanvas() {
             this.y = Math.random() * height;
             this.velocityX = (Math.random() - 0.5) * properties.velocity;
             this.velocityY = (Math.random() - 0.5) * properties.velocity;
+
+            this.radius = Math.random() * (properties.particleRadius - 1) + 1;
+
+            this.opacity = Math.random() * (1 - 0.2) + 0.2;
         }
 
         position() {
@@ -208,8 +197,10 @@ function initNeuralCanvas() {
 
         draw() {
             ctx.beginPath();
-            ctx.arc(this.x, this.y, properties.particleRadius, 0, Math.PI * 2);
-            ctx.fillStyle = properties.particleColor;
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+
+            ctx.fillStyle = `rgba(${properties.rgbBase}, ${this.opacity})`;
+            
             ctx.fill();
         }
     }
@@ -228,7 +219,6 @@ function initNeuralCanvas() {
             particles[i].position();
             particles[i].draw();
 
-            // Conexão entre partículas
             for (let j = i + 1; j < particles.length; j++) {
                 const p1 = particles[i];
                 const p2 = particles[j];
@@ -245,14 +235,13 @@ function initNeuralCanvas() {
                 }
             }
 
-            // Conexão com o Mouse
             if (mouse.x != null) {
                 const distanceMouse = Math.sqrt(Math.pow(particles[i].x - mouse.x, 2) + Math.pow(particles[i].y - mouse.y, 2));
 
                 if (distanceMouse < mouse.radius) {
                     ctx.beginPath();
                     ctx.strokeStyle = properties.lineColor; 
-                    ctx.lineWidth = 1.5; // Linha mais grossa para o mouse
+                    ctx.lineWidth = 1; 
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(mouse.x, mouse.y);
                     ctx.stroke();
