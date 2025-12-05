@@ -128,7 +128,7 @@ img {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-size: 0.8rem;
-  font-weight: 800; 
+  font-weight: 800;
   letter-spacing: 2px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -145,7 +145,7 @@ img {
 
 /* SUBTÍTULO */
 .hero-content .hero-subtitle {
-  font-family: "Montserrat", sans-serif; 
+  font-family: "Montserrat", sans-serif;
   color: #f0f0f0;
   font-size: 1.25rem;
   font-weight: 300;
@@ -1267,4 +1267,60 @@ footer {
 .btn-back:hover span,
 .btn-back:hover i {
   transform: translateY(-2px); /* Anima a setinha também */
+}
+
+/* =========================================
+   GRID DE PERGUNTAS (INTRODUÇÃO)
+   ========================================= */
+
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+
+  margin-bottom: 50px;
+  /* ADICIONE ESTA LINHA PARA DESGRUDAR DO TÍTULO: */
+  margin-top: 60px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.question-card {
+  background: #ffffff;
+  padding: 20px; /* Padding equilibrado em todos os lados */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--accent-color);
+
+  /* MÁGICA DO ALINHAMENTO VERTICAL */
+  display: flex; /* Ativa o modo flexível */
+  flex-direction: column; /* Organiza itens em coluna */
+  justify-content: center; /* Centraliza VERTICALMENTE (o segredo está aqui) */
+  align-items: flex-start; /* Alinha horizontalmente à esquerda */
+
+  height: 100%; /* Força ocupar a altura toda do grid */
+  min-height: 160px; /* Garante altura mínima visual */
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-5px); /* Sobe um pouquinho */
+  box-shadow: 0 15px 35px rgba(30, 58, 40, 0.1); /* Sombra verde */
+  border-color: transparent; /* Remove borda cinza sutil */
+}
+
+.question-icon {
+  display: none;
+}
+
+.question-card p {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.4;
+  margin: 0; /* IMPORTANTE: Zera margens externas */
+  font-weight: 600;
 }
