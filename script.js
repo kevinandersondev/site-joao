@@ -132,7 +132,7 @@ function toggleLei() {
 }
 
 /* =========================================
-   NEURAL CANVAS ANIMATION (COM MOUSE E MAIS PARTÍCULAS)
+   NEURAL CANVAS (VERSÃO FINAL: MOUSE CORRIGIDO + TAMANHO MAIOR)
    ========================================= */
 document.addEventListener("DOMContentLoaded", () => {
     initNeuralCanvas();
@@ -141,49 +141,51 @@ document.addEventListener("DOMContentLoaded", () => {
 function initNeuralCanvas() {
     const canvas = document.getElementById('neural-canvas');
     if (!canvas) return;
+    
+    // Pega a seção pai para rastrear o mouse (já que o canvas está no fundo)
+    const parentSection = canvas.parentElement; 
 
     const ctx = canvas.getContext('2d');
     let width, height;
     let particles = [];
     
-    // Objeto para rastrear o mouse
+    // Rastreamento do mouse
     let mouse = {
         x: null,
         y: null,
-        radius: 150 // Raio de alcance do mouse
+        radius: 180 // Aumentei o alcance da conexão com o mouse
     };
 
     // CONFIGURAÇÕES
     const properties = {
         bgColor: 'rgba(255, 255, 255, 0)',
         
-        // Verde escuro sólido para as bolinhas
+        // Verde Sólido (#1e3a28)
         particleColor: 'rgba(30, 58, 40, 1)', 
         
-        // Verde com transparência para as linhas (antes era dourado)
+        // Linhas Verdes Transparentes
         lineColor: 'rgba(30, 58, 40, 0.4)',   
         
-        particleRadius: 3,
-        particleCount: 130, 
-        lineLength: 120,    
+        particleRadius: 6,  // AUMENTADO (era 3, agora é 6)
+        particleCount: 100, // Ajustado para não ficar poluído com bolinhas grandes
+        lineLength: 150,    
         velocity: 0.6       
     };
 
-    // Ajusta o tamanho
     function resize() {
-        width = canvas.width = canvas.parentElement.offsetWidth;
-        height = canvas.height = canvas.parentElement.offsetHeight;
+        width = canvas.width = parentSection.offsetWidth;
+        height = canvas.height = parentSection.offsetHeight;
     }
 
-    // Rastreia o movimento do mouse
-    canvas.addEventListener('mousemove', (event) => {
+    // CORREÇÃO DO MOUSE:
+    // Ouve a SEÇÃO INTEIRA, não apenas o canvas
+    parentSection.addEventListener('mousemove', (event) => {
         const rect = canvas.getBoundingClientRect();
         mouse.x = event.clientX - rect.left;
         mouse.y = event.clientY - rect.top;
     });
 
-    // Remove o mouse da equação quando ele sai da seção
-    canvas.addEventListener('mouseleave', () => {
+    parentSection.addEventListener('mouseleave', () => {
         mouse.x = null;
         mouse.y = null;
     });
@@ -200,7 +202,6 @@ function initNeuralCanvas() {
             this.x += this.velocityX;
             this.y += this.velocityY;
 
-            // Rebater nas paredes
             if (this.x > width || this.x < 0) this.velocityX *= -1;
             if (this.y > height || this.y < 0) this.velocityY *= -1;
         }
@@ -227,7 +228,7 @@ function initNeuralCanvas() {
             particles[i].position();
             particles[i].draw();
 
-            // 1. CONEXÃO ENTRE PARTÍCULAS
+            // Conexão entre partículas
             for (let j = i + 1; j < particles.length; j++) {
                 const p1 = particles[i];
                 const p2 = particles[j];
@@ -236,7 +237,7 @@ function initNeuralCanvas() {
                 if (distance < properties.lineLength) {
                     ctx.beginPath();
                     ctx.strokeStyle = properties.lineColor;
-                    ctx.lineWidth = 0.5; // Linha fina entre elas
+                    ctx.lineWidth = 0.5; 
                     ctx.moveTo(p1.x, p1.y);
                     ctx.lineTo(p2.x, p2.y);
                     ctx.stroke();
@@ -244,14 +245,14 @@ function initNeuralCanvas() {
                 }
             }
 
-            // 2. CONEXÃO COM O MOUSE (NOVA LÓGICA)
+            // Conexão com o Mouse
             if (mouse.x != null) {
                 const distanceMouse = Math.sqrt(Math.pow(particles[i].x - mouse.x, 2) + Math.pow(particles[i].y - mouse.y, 2));
 
                 if (distanceMouse < mouse.radius) {
                     ctx.beginPath();
-                    ctx.strokeStyle = properties.lineColor; // Usa a mesma cor dourada
-                    ctx.lineWidth = 1; // Linha um pouco mais grossa para o mouse
+                    ctx.strokeStyle = properties.lineColor; 
+                    ctx.lineWidth = 1.5; // Linha mais grossa para o mouse
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(mouse.x, mouse.y);
                     ctx.stroke();
